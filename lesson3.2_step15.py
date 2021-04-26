@@ -1,13 +1,13 @@
-'''https://stepik.org/lesson/24470/step/14'''
+'''https://stepik.org/lesson/24470/step/15'''
 import sys
 import re
 
-pattern = r"\b(\w)(\w)([\w]*)\b"
-change = r'\2\1\3'
+pattern = r"(\w)(\1*)"
+change = r'\1'
 
 for line in sys.stdin:
     line = line.rstrip()
     #test = re.findall(pattern, line)
-    # print(test)
+    #print(test)
     finder = re.sub(pattern, change, line)
     print(finder)
